@@ -1,6 +1,11 @@
 # TesseraxLive
 
-**TODO: Add description**
+This package provides a `LiveComponent` to be used with `LiveView` that creates a canvas HTML component. 
+Furthermore, this package utilizes `Tesserax`, which uses Tesseract OCR, to recognize the drawn text inside the canvas HTML component. 
+
+## Usage
+
+
 
 ## Installation
 

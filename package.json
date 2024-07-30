@@ -1,0 +1,12 @@
+{
+  "name": "tesserax_live",
+  "version": "1.0.0",
+  "description": "This package provides a `LiveComponent` to be used with `LiveView` that creates a canvas HTML component.  Furthermore, this package utilizes `Tesserax`, which uses Tesseract OCR, to recognize the drawn text inside the canvas HTML component.",
+  "main": "./priv/static/tesserax_live.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "author": "zteln",
+  "license": "MIT"
+}
