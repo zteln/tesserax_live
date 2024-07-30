@@ -4,8 +4,37 @@ This package provides a `LiveComponent` to be used with `LiveView` that creates 
 Furthermore, this package utilizes `Tesserax`, which uses Tesseract OCR, to recognize the drawn text inside the canvas HTML component. 
 
 ## Usage
+In `./assets/js/app.js` add
+```
+...
+import { TesseraxCanvas } from "tesserax_live"
 
+let Hooks = {};
 
+Hooks.TesseraxCanvas = TesseraxCanvas;
+
+...
+let liveSocket = new LiveSocket("/live", Socket, {
+    ...
+    hooks: Hooks
+})
+...
+```
+
+In your LiveView HEEx, add the following
+```
+~H"""
+...
+<.live_component module={TesseraxLive} id="canvas-ID" />
+...
+"""
+```
+
+Use the interface functions to interact with the canvas component:
+- `read/1`: reads the image in the canvas and sends it for recognition with (Tesserax)[https://github.com/zteln/tesserax].
+- `read/2`: takes a path to an image (e.g. file upload) and uses Tesserax to read the image.
+- `set_opts/2`: sets opts in the `%Tesserax.Command{}` struct.
+- `reset/1`: resets the canvas component.
 
 ## Installation
 

@@ -22,10 +22,10 @@ defmodule TesseraxLive do
         psm: 3, 
         oem: 3
       ]
-      TesseraxLive.set_tesserax_params(tesserax_canvas_id, opts)
+      TesseraxLive.set_opts(tesserax_canvas_id, opts)
   """
-  @spec set_tesserax_opts(id :: String.t(), opts :: keyword()) :: :ok
-  def(set_tesserax_opts(id, opts)) do
+  @spec set_opts(id :: String.t(), opts :: keyword()) :: :ok
+  def set_opts(id, opts) do
     LiveView.send_update(TesseraxLive, id: id, action: {:set_opts, opts})
     :ok
   end

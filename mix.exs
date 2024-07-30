@@ -5,12 +5,13 @@ defmodule TesseraxLive.MixProject do
     [
       app: :tesserax_live,
       version: "0.1.0",
-      elixir: "~> 1.17",
+      elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       package: package(),
       description: description(),
       name: "TesseraxLive",
-      deps: deps()
+      deps: deps(),
+      source_url: "https://github.com/zteln/tesserax_live"
     ]
   end
 
@@ -27,7 +28,7 @@ defmodule TesseraxLive.MixProject do
       {:phoenix_live_view, "~> 0.20.17"},
       {:phoenix_html, "~> 4.1"},
       {:tesserax, "~> 0.1"},
-      {:ex_doc, "~> 0.34.2"}
+      {:ex_doc, "~> 0.34.2", only: :dev, runtime: false}
     ]
   end
 
@@ -37,9 +38,10 @@ defmodule TesseraxLive.MixProject do
 
   defp package do
     [
-      name: "TesseraxLive",
+      name: "tesserax_live",
       licenses: ["MIT"],
-      files: ~w(lib priv LICENSE mix.exs package.json README.md)
+      files: ~w(lib priv LICENSE mix.exs package.json README.md),
+      links: %{"GitHub" => "https://github.com/zteln/tesserax_live"}
     ]
   end
 end
