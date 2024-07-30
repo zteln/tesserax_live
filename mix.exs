@@ -4,13 +4,14 @@ defmodule TesseraxLive.MixProject do
   def project do
     [
       app: :tesserax_live,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       package: package(),
       description: description(),
       name: "TesseraxLive",
       deps: deps(),
+      docs: docs(),
       source_url: "https://github.com/zteln/tesserax_live"
     ]
   end
@@ -34,6 +35,13 @@ defmodule TesseraxLive.MixProject do
 
   defp description do
     "Provides a LiveComponent that renders a HTML5 canvas component for use with Tesserax."
+  end
+
+  defp docs do
+    [
+      main: "TesseraxLive",
+      extras: ["README.md", "LICENSE"]
+    ]
   end
 
   defp package do
