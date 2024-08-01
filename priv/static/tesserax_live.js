@@ -1,6 +1,5 @@
 var TesseraxCanvas = {
     mounted() {
-        this.el.style.position = "fixed";
         this.el.style.border = "solid black";
         this.el.style.backgroundColor = "white";
         var positions = { x: 0, y: 0 };
@@ -30,8 +29,8 @@ var TesseraxCanvas = {
             )
         })
         function setPosition(event, canvas) {
-            positions.x = event.clientX - canvas.offsetLeft;
-            positions.y = event.clientY - canvas.offsetTop;
+            positions.x = event.clientX - canvas.getBoundingClientRect().left;
+            positions.y = event.clientY - canvas.getBoundingClientRect().top;
         };
         function drawPath(event, canvas) {
             ctx.beginPath();
