@@ -118,11 +118,11 @@ defmodule TesseraxLive do
     socket =
       socket
       |> assign(:id, id)
-      |> assign(:width, assigns["width"] || CanvasComponent.default_width())
-      |> assign(:height, assigns["height"] || CanvasComponent.default_height())
-      |> assign(:line_cap, assigns["line_cap"] || CanvasComponent.default_line_cap())
-      |> assign(:stroke_style, assigns["stroke_style"] || CanvasComponent.default_stroke_style())
-      |> assign(:line_width, assigns["line_width"] || CanvasComponent.default_line_width())
+      |> assign(:width, assigns[:width] || CanvasComponent.default_width())
+      |> assign(:height, assigns[:height] || CanvasComponent.default_height())
+      |> assign(:line_cap, assigns[:line_cap] || CanvasComponent.default_line_cap())
+      |> assign(:stroke_style, assigns[:stroke_style] || CanvasComponent.default_stroke_style())
+      |> assign(:line_width, assigns[:line_width] || CanvasComponent.default_line_width())
 
     {:ok, socket}
   end
